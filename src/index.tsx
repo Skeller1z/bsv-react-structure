@@ -17,7 +17,7 @@ root.render(
   <>
     <RecoilRoot>
       <RecoilNexus />
-      <BrowserRouter basename="">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </RecoilRoot>

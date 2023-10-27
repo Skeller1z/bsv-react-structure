@@ -9,7 +9,7 @@ import Auth from "../../../../MainCall/Auth";
 import auhv from "../../../../MainCall/auhv.json";
 import { MsgWarning } from "../../../../MainCall/dialog";
 import { useTranslation } from "react-i18next";
-import liff from "@line/liff/dist/lib";
+import liff from "@line/liff/";
 interface LocationState {
   UserId: string;
   uri: string;

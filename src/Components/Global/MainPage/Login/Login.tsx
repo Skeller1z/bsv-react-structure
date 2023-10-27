@@ -8,13 +8,13 @@ import {
 } from "react-router-dom";
 import Auth from "../../../../MainCall/Auth";
 import { useTranslation } from "react-i18next";
-import { ReactComponent as UpimgIcon } from "../../image/SVG_Memorybox/Home instruction/Symbol.svg";
-import { ReactComponent as Line } from "../../image/SVG_Memorybox/Login/line-brands.svg";
+import { ReactComponent as UpimgIcon } from "../../../../Assets/BSVAssets/GeneralAssets/SVG/Symbol.svg";
+import { ReactComponent as Line } from "../../../../Assets/BSVAssets/Login/line-brands.svg";
 import { GetdataAPI, GetdataAPI_Outside } from "../../../../MainCall/MainCall";
-import "../../css/OR.css";
+import '../../../../css/OR.css'
 import auhv from "../../../../MainCall/auhv.json";
 import { MsgWarning } from "../../../../MainCall/dialog";
-import liff from "@line/liff/dist/lib";
+import liff from "@line/liff";
 import LoginFacebook from "./LoginFacebook";
 import Google_login from "./Google_login";
 import LineLogin from "./LineLogin";
@@ -101,7 +101,7 @@ const { Authenticate, AuthenticateLine } = auhv;
               AddLine_WITH_Redirect(profile.userId, undefined);
             });
           } else {
-            navigate("/");
+            navigate("/main");
           }
         } else if (StateInterface.UserId === undefined) {
           if (liff.isInClient()) {
