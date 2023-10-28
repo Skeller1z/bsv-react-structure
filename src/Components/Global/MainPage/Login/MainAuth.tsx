@@ -4,7 +4,7 @@ import Auth from "../../../../MainCall/Auth";
 import liff from "@line/liff";
 import { GetdataAPI_Outside } from "../../../../MainCall/MainCall";
 
-export default function MainAuth() {
+ const MainAuth = () => {
   const navigate = useNavigate();
   const [islogin, setislogin] = useState(true);
 
@@ -15,8 +15,8 @@ export default function MainAuth() {
           setislogin(false);
           console.log("กรุณาล็อกอิน")
         } else {
-          navigate("/Authen");
-          console.log("กรุณาล็fffอกอิน")
+          navigate("/");
+          console.log("สำเร็จ")
         }
       });
     } else {
@@ -34,3 +34,5 @@ export default function MainAuth() {
     </>
   );
 }
+
+export default MainAuth

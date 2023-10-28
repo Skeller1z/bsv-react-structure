@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactComponent as Logo } from "../../../Assets/BSVAssets/GeneralAssets/SVG/Symbol.svg";
-export default function Loading() {
+
+const Loading = () =>{
   return (
     <>
       <div className="App-header">
@@ -11,3 +12,5 @@ export default function Loading() {
     </>
   );
 }
+
+export default Loading;

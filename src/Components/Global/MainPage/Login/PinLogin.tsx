@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import CheckPin from "./CheckPin";
 
-export default function PinLogin() {
+const PinLogin = () => {
   //--------ตัวแปร----------------------------
   interface LocationState {
     UserId: string;
@@ -39,3 +39,5 @@ export default function PinLogin() {
     </>
   );
 }
+
+export default PinLogin

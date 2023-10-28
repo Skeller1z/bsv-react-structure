@@ -5,7 +5,8 @@ import Auth from "../../../../MainCall/Auth";
 import auhv from "../../../../MainCall/auhv.json";
 import { ReactComponent as Logo } from "../../../../image/SVG_Memorybox/Home instruction/Symbol.svg";
 import { GetdataAPI } from "../../../../MainCall/MainCall";
-export default function CheckPin(props) {
+
+const CheckPin = (props) => {
   const { AuthenticateLine } = auhv;
   const navigate = useNavigate();
   const [Pin, setPin] = useState("");
@@ -75,3 +76,5 @@ export default function CheckPin(props) {
     </>
   );
 }
+
+export default CheckPin

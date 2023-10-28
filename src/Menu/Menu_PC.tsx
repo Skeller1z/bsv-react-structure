@@ -6,13 +6,14 @@ import List from "devextreme-react/list.js";
 import { ReactComponent as UpimgIcon } from "../Assets/BSVAssets/GeneralAssets/SVG/Symbol.svg";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { userdata } from "../Recoil/MainRecoil";
-import {TopMenu_PC } from '../JSON/Menu_PC/Sidemenu'
+import { TopMenu_PC } from "../JSON/Menu_PC/Sidemenu";
 export default function Menu_PC({ pageshow }) {
   //------------------------------------ตัวแปร---------------------------------------------
+  
   const navigate = useNavigate();
   const [opened, setopened] = useState<boolean>(true);
   const [txtLogin, settxtLogin] = useState("");
-  
+
   //------------------------------------onload---------------------------------------------
 
   //------------------------------------function---------------------------------------------
@@ -24,6 +25,7 @@ export default function Menu_PC({ pageshow }) {
       </button>
     );
   };
+
   const AboutItem = () => {
     return (
       <button type="button" className="hover:bg-slate-100">
@@ -31,6 +33,7 @@ export default function Menu_PC({ pageshow }) {
       </button>
     );
   };
+
   const TechItem = () => {
     return (
       <button type="button" className="hover:bg-slate-100">
@@ -40,6 +43,7 @@ export default function Menu_PC({ pageshow }) {
       </button>
     );
   };
+
   const PriceItem = () => {
     return (
       <button type="button" className="hover:bg-slate-100">
@@ -49,6 +53,7 @@ export default function Menu_PC({ pageshow }) {
       </button>
     );
   };
+
   const ChatItem = () => {
     return (
       <button type="button" className="hover:bg-slate-100">
@@ -58,6 +63,7 @@ export default function Menu_PC({ pageshow }) {
       </button>
     );
   };
+
   const LoginItem = () => {
     return (
       <button
@@ -108,10 +114,7 @@ export default function Menu_PC({ pageshow }) {
     return (
       <div className="list">
         <div className="list" style={{ width: "200px" }}>
-          <List
-            dataSource={TopMenu_PC}
-            className="bg-fill"
-          />
+          <List dataSource={TopMenu_PC} className="bg-fill" />
         </div>
       </div>
     );

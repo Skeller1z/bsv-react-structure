@@ -17,7 +17,7 @@ interface LocationState {
   inv_id: number;
   email: string;
 }
-export default function LoginFacebook(prop) {
+ const LoginFacebook = (prop) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
@@ -161,3 +161,5 @@ export default function LoginFacebook(prop) {
     </div>
   );
 }
+
+export default LoginFacebook

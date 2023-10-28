@@ -13,7 +13,7 @@ import Auth from "../../../../MainCall/Auth";
 import auhv from "../../../../MainCall/auhv.json";
 import { useRef } from "react";
 
-export default function Google_login() {
+const Google_login = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const params = searchParams.get("cartstore");
   const navigate = useNavigate();
@@ -105,3 +105,5 @@ export default function Google_login() {
     </>
   );
 }
+
+export default Google_login

@@ -1,37 +1,45 @@
-import { useRoutes } from "react-router-dom";
-import Menu_PC from "../Menu/Menu_PC";
-import Menu_Mobile from "../Menu/Menu_Mobile";
+import React, { useEffect, useRef } from "react";
 import { isBrowser } from "react-device-detect";
-import Main from "../Components/Global/MainPage/Main";
-import MainContent from "../Pages/MainContent";
-import Login from "../Components/Global/MainPage/Login/Login";
-import MainAuth from "../Components/Global/MainPage/Login/MainAuth";
+import { Navigate, useRoutes } from "react-router-dom";
+
+const MainAuth = React.lazy(
+  () => import("../Components/Global/MainPage/Login/MainAuth")
+);
+const Login = React.lazy(
+  () => import("../Components/Global/MainPage/Login/Login")
+);
+const Main = React.lazy(() => import("../Components/Global/MainPage/Main"));
+const MainContent = React.lazy(() => import("../Pages/MainContent"));
+const Menu_Mobile = React.lazy(() => import("../Menu/Menu_Mobile"));
+const Menu_PC = React.lazy(() => import("../Menu/Menu_PC"));
 
 export default function Router() {
+  const menupayRef = useRef(null);
   return useRoutes([
     {
-      path: "/",
+      path: "/Authen",
       element: <MainAuth />,
-    },
-    { index: true, 
-      path: "/Authen", 
-      element: <Login /> 
-    },
+      children: [
+        { index: true, path: "/Authen", element: <Login navTo={"/"} /> },
+      ],
+    },  
     {
-      path: "/main",
+      path: "/",
       element: <Main />,
       children: [
         {
           index: true,
-          path: "/main",
+          path: "/",
           element: isBrowser ? (
             <Menu_PC pageshow={<MainContent />} />
           ) : (
-            <Menu_Mobile/>
+            <Menu_Mobile pageshow={<MainContent />}/>
           ),
         },
-      ]
-      }    
+      ],
+    },
+
+    { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 }
 

@@ -5,7 +5,7 @@ import Router from "./routes/routes";
 import { setupPwaUpdateNotifications } from "./PWA/pwaUpdateNotifications";
 import Loading from "./Components/Global/Loading/LoadingPage";
 
-function App() {
+const App = () => {
   //--------------------- State -----------------------------
 
   //--------------------- Onload -----------------------------

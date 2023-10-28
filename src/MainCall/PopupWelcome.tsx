@@ -2,7 +2,8 @@ import { Popup } from "devextreme-react";
 import { useState } from "react";
 import Beta from "../image/Beta.png";
 import { ReactComponent as Logo } from "../image/SVG_Memorybox/Home instruction/Symbol.svg";
-export default function PopupWelcome(props) {
+
+ const PopupWelcome = (props) =>{
     return (
         <Popup
             position="center"
@@ -39,3 +40,5 @@ export default function PopupWelcome(props) {
         </Popup>
     )
 };
+
+export default PopupWelcome

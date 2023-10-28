@@ -1,6 +1,8 @@
 import React from "react";
 import PinLogin from "./PinLogin";
 
-export default function LineLogin() {
+const LineLogin = () => {
   return <></>;
 }
+
+export default LineLogin;

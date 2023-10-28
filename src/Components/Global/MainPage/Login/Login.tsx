@@ -6,22 +6,22 @@ import {
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
-import Auth from "../../../../MainCall/Auth";
+
 import { useTranslation } from "react-i18next";
-import { ReactComponent as UpimgIcon } from "../../../../Assets/BSVAssets/GeneralAssets/SVG/Symbol.svg";
-import { ReactComponent as Line } from "../../../../Assets/BSVAssets/Login/line-brands.svg";
-import { GetdataAPI, GetdataAPI_Outside } from "../../../../MainCall/MainCall";
-import '../../../../css/OR.css'
+
 import auhv from "../../../../MainCall/auhv.json";
-import { MsgWarning } from "../../../../MainCall/dialog";
+
 import liff from "@line/liff";
 import LoginFacebook from "./LoginFacebook";
 import Google_login from "./Google_login";
 import LineLogin from "./LineLogin";
+import { GetdataAPI, GetdataAPI_Outside } from "../../../../MainCall/MainCall";
+import Auth from "../../../../MainCall/Auth";
+import { MsgWarning } from "../../../../MainCall/dialog";
 import Loading from "../../Loading/LoadingPage";
-const { Authenticate, AuthenticateLine } = auhv;
 
- const Login = () => {
+const { Authenticate, AuthenticateLine } = auhv;
+export default function Login(props) {
   //------------------------ตัวแปร-----------------------------
   const btnlogin = useRef(null);
   const Username = useRef(null);
@@ -49,34 +49,10 @@ const { Authenticate, AuthenticateLine } = auhv;
   const params_parentcomp_id = searchParams.get("parentcomp_id");
 
   //-------------------------- onload --------------------------
-  useEffect(() => {}, []);
 
   useEffect(() => {
     checkLineAppOpen();
-    console.log(URL)
   }, []);
-
-  const test = [
-    {
-      comp_id: 12,
-      deposit: 0,
-      discount: 0,
-      grand_total: 1,
-      item_discount: 0,
-      item_id: 74345,
-      ms_id: 62835,
-      order_date: "2023-06-13T00:00:00",
-      order_id: 6264,
-      order_item_id: 6497,
-      order_no: "SO6606-0105",
-      partner_id: 7110,
-      qty: 1,
-      remark: null,
-      total: 1,
-      unit_price: 1,
-      unitid: 3,
-    },
-  ];
 
   //------------------------function--------------------------
   const login = (e) => {
@@ -101,7 +77,7 @@ const { Authenticate, AuthenticateLine } = auhv;
               AddLine_WITH_Redirect(profile.userId, undefined);
             });
           } else {
-            navigate("/main");
+            navigate("/");
           }
         } else if (StateInterface.UserId === undefined) {
           if (liff.isInClient()) {
@@ -125,7 +101,6 @@ const { Authenticate, AuthenticateLine } = auhv;
       }
     });
   };
-  
   const AddLine_WITH_Redirect = (UserLineId, uri) => {
     GetdataAPI_Outside("/api/Main/CheckUserLineId", {
       User_line_userid: UserLineId,
@@ -211,7 +186,7 @@ const { Authenticate, AuthenticateLine } = auhv;
   const lineAuth = () => {
     liff
       .init({
-        liffId: "2000436952-PpzaXXN2", // Use own liffId
+        liffId: "1660830791-KL98rNzL", // Use own liffId
         withLoginOnExternalBrowser: true,
       })
       .then(() => {
@@ -314,18 +289,15 @@ const { Authenticate, AuthenticateLine } = auhv;
       <div className={!LoadingLine ? "" : "hidden"}>
         <div className="container">
           <div className="grid grid-cols-12 gap-3 mt-8 mb-4">
-            <div className="grid justify-center col-span-12 sm: md:col-span-12 lg:col-span-12 xl:col-span-12 content-start mb-5 ">
-              <UpimgIcon className="inline h-[auto] w-[70px] " />
-            </div>
+            <div className="grid justify-center col-span-12 sm: md:col-span-12 lg:col-span-12 xl:col-span-12 content-start mb-5 "></div>
             <div className="grid col-span-12 justify-center sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-12 content-start mb-4">
-              {t("ECOM")}
+              {t("THE MEMORY BOX")}
             </div>
             <div className="grid col-span-12  sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-12 content-start  cursor-pointer px-4 ">
               <a
                 className="bg-lime-500 hover:bg-lime-600 active:bg-lime-600 py-2 rounded text-white text-center kep-login-line"
                 onClick={lineAuth}
               >
-                <Line className="inline h-[auto] w-[20px] mr-2 fill-white " />
                 {t("Login with LINE")}
               </a>
             </div>
@@ -434,5 +406,3 @@ const { Authenticate, AuthenticateLine } = auhv;
     </div>
   );
 }
-
-export default Login
