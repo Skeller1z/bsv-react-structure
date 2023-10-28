@@ -8,11 +8,11 @@ import {
   UserState,
   userWebdata,
   userdata,
-} from "../../../Recoil/MainRecoil";
+} from "../../../../Recoil/MainRecoil";
 
 import { Toast } from "devextreme-react";
-import Auth from "../../../MainCall/Auth";
-import PopupPDPA from "../Popup/PopupPDPA";
+import Auth from "../../../../MainCall/Auth";
+import PopupPDPA from "../../Popup/PopupPDPA";
 
 interface ToasttypeFace {
   type?: "custom" | "error" | "info" | "success" | "warning";

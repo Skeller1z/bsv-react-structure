@@ -8,7 +8,7 @@ const MainAuth = React.lazy(
 const Login = React.lazy(
   () => import("../Components/Global/MainPage/Login/Login")
 );
-const Main = React.lazy(() => import("../Components/Global/MainPage/Main"));
+const Main = React.lazy(() => import("../Components/Global/MainPage/Login/Main"));
 const MainContent = React.lazy(() => import("../Pages/MainContent"));
 const Menu_Mobile = React.lazy(() => import("../Menu/Menu_Mobile"));
 const Menu_PC = React.lazy(() => import("../Menu/Menu_PC"));
