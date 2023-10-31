@@ -1,11 +1,11 @@
 import React from 'react'
 
-type Props = {}
+export default function Menu_index() {
+  const BusinessValue = () => {
+      //your logic here
+  }
 
-const Menu_index = (props: Props) => {
   return (
     <div>Menu_index</div>
   )
 }
-
-export default Menu_index

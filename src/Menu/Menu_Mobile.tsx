@@ -2,6 +2,7 @@ import React from 'react'
 
 
 const Menu_Mobile = ({pageshow}) => {
+  
   return (
     <>
     <div id="content" className="dx-theme-background-color">

@@ -18,7 +18,8 @@ const App = () => {
   //---------------------html----------------------------
   return (
     <>
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}> */}
+      <Suspense>
         <Router />
       </Suspense>
     </>
