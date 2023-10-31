@@ -1,11 +1,7 @@
 import React from 'react'
 
-type Props = {}
-
-const MenuBottom = (props: Props) => {
+export default function MenuBottom() {
   return (
     <div>MenuBottom</div>
   )
 }
-
-export default MenuBottom

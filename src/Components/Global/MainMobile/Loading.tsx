@@ -1,11 +1,7 @@
 import React from 'react'
 
-type Props = {}
-
-const Loading = (props: Props) => {
+export default function Loading(){
   return (
     <div>Loading</div>
   )
 }
-
-export default Loading

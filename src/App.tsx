@@ -5,25 +5,26 @@ import Router from "./routes/routes";
 import { setupPwaUpdateNotifications } from "./PWA/pwaUpdateNotifications";
 import Loading from "./Components/Global/Loading/LoadingPage";
 
-const App = () => {
-  //--------------------- State -----------------------------
+ //---------------- DevStore/interface -----------------------
+ export default function App(){
+  //--------------------- State ------------------------------
 
   //--------------------- Onload -----------------------------
   useEffect(() => {
     setupPwaUpdateNotifications();
   }, []);
   
-  //--------------------- function -----------------------------
+  //--------------------- function ----------------------------
 
-  //---------------------html----------------------------
+  //--------------------- html --------------------------------
   return (
     <>
-      {/* <Suspense fallback={<Loading />}> */}
-      <Suspense>
+      <Suspense fallback={<Loading />}> 
         <Router />
       </Suspense>
     </>
   );
 }
 
-export default App;
+  //---------------------- Component ---------------------------
+

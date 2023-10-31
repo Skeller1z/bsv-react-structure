@@ -1,11 +1,7 @@
 import React from 'react'
 
-type Props = {}
-
-const LoginMobile = (props: Props) => {
+export default function LoginMobile() {
   return (
     <div>LoginMobile</div>
   )
 }
-
-export default LoginMobile

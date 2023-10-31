@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Menu_Mobile = ({pageshow}) => {
+export default function Menu_Mobile({pageshow}) {
   
   return (
     <>
@@ -15,5 +15,3 @@ const Menu_Mobile = ({pageshow}) => {
     </>
   )
 }
-
-export default Menu_Mobile
